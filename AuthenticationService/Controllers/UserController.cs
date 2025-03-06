@@ -6,9 +6,10 @@ namespace AuthenticationService.Controllers;
 [Route("[controller]")]
 public class UserController : ControllerBase
 {
-    public UserController()
+    private Ilogger _logger;
+    public UserController(Ilogger logger)
     {
-        var logger = new Logger();
+        _logger = logger;
         logger.WriteEvent("сообщение о событии в программе");
         logger.WriteError("сообщение об ошибке в программе");
     }
