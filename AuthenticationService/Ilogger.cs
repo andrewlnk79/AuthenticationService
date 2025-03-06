@@ -2,7 +2,7 @@
 {
     public interface Ilogger
     {
-        void WriteEvent();
-        void WriteError();
+        void WriteEvent(string eventMessage);
+        void WriteError(string errorMessage);
     }
 }
