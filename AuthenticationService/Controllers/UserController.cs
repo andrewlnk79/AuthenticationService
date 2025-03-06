@@ -26,6 +26,24 @@ public class UserController : ControllerBase
             Email = "ant@mail.com"
         };
     }
+    [HttpGet]
+    [Route("viewmodel")]
+    public UserViewModel GetUserViewModel()
+    {
+        User user = new User()
+        {
+            Id = Guid.NewGuid(),
+            FirstName = "Иван",
+            LastName = "Иванов",
+            Email = "ivan@gmail.com",
+            Password = "111",
+            Login = "ivanov"
+        };
+
+        UserViewModel userViewModel = new UserViewModel(user);
+
+        return userViewModel;
+    }
 
 
 
